@@ -13,6 +13,7 @@
 		3264E07425629D1C00DC74BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3264E07325629D1C00DC74BE /* Preview Assets.xcassets */; };
 		3264E08025629D1D00DC74BE /* CalcSurTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264E07F25629D1D00DC74BE /* CalcSurTests.swift */; };
 		3264E08B25629D1D00DC74BE /* CalcSurUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264E08A25629D1D00DC74BE /* CalcSurUITests.swift */; };
+		3264E0C52562AEEC00DC74BE /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3264E0C42562AEEC00DC74BE /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3264E08625629D1D00DC74BE /* CalcSurUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalcSurUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3264E08A25629D1D00DC74BE /* CalcSurUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcSurUITests.swift; sourceTree = "<group>"; };
 		3264E08C25629D1D00DC74BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3264E0C42562AEEC00DC74BE /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				3264E07525629D1C00DC74BE /* Info.plist */,
 				3264E07625629D1C00DC74BE /* CalcSur.entitlements */,
 				3264E07225629D1C00DC74BE /* Preview Content */,
+				3264E0C42562AEEC00DC74BE /* SettingsView.swift */,
 			);
 			path = CalcSur;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3264E0C52562AEEC00DC74BE /* SettingsView.swift in Sources */,
 				3264E06F25629D1600DC74BE /* ContentView.swift in Sources */,
 				3264E06D25629D1600DC74BE /* CalcSurApp.swift in Sources */,
 			);
