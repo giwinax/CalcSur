@@ -1,2 +1,2 @@
 # CalcSur
-Calculation menu bar app for macOS Big Sur cuz' Calculation widget was deprecated
+Simple calculation menu bar app for macOS Big Sur cuz' Calculation widget was deprecated
