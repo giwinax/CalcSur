@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var firstNumber = 0
-    @State private var secondNumber = 0
+    @State private var firstNumber = 0.0
+    @State private var secondNumber = 0.0
     @State private var operand = ""
     @State private var calculatorText = "0"
     @State private var isTypingNumber = false
@@ -30,14 +30,14 @@ struct ContentView: View {
     }
     private func operandTapped(_ operand: String) {
         isTypingNumber = false
-        firstNumber = Int(calculatorText)!
+        firstNumber = Double(calculatorText)!
         self.operand = operand
         calculatorText = operand
     }
     private func calculate() {
         isTypingNumber = false
-        var result  = 0
-        secondNumber = Int(calculatorText)!
+        var result  = 0.0
+        secondNumber = Double(calculatorText)!
         if operand == "+" {
             result = firstNumber + secondNumber
         } else if operand == "-" {
@@ -47,67 +47,70 @@ struct ContentView: View {
             result = firstNumber * secondNumber
         }
         else if operand == "/" {
-            if secondNumber == 0 {
-                result = 0
+            if (secondNumber == 0.0 || secondNumber == 0) {
+                result = 0.0
             } else
-                {
+            {
                 result = firstNumber / secondNumber
             }
         }
-        calculatorText = "\(result)"
+        calculatorText = String(format: "%.3f", result)
     }
     var body: some View {
         VStack {
             TextField("0", text: $calculatorText)
                 .border(Color.gray, width: 1)
                 .multilineTextAlignment(.trailing)
-                .frame(maxWidth:100)
+                .frame(maxWidth:125)
             HStack {
                 // 2.
-                createCalcDigit("1")
-                createCalcDigit("2")
-                createCalcDigit("3")
-            }
-            HStack {
-                createCalcDigit("4")
-                createCalcDigit("5")
-                createCalcDigit("6")
-            }
-            HStack {
-                createCalcDigit("7")
-                createCalcDigit("8")
-                createCalcDigit("9")
-            }
-            HStack {
-                
-                createCalcDigit("0")
+                createCalcDigit("1").frame(minWidth: 24, maxWidth: 25)
+                createCalcDigit("2").frame(minWidth: 24, maxWidth: 25)
+                createCalcDigit("3").frame(minWidth: 24, maxWidth: 25)
                 Button(action: {
                     self.operandTapped("+")
                 }) {
                     (Text("+"))
-                }
+                }.frame(minWidth: 24, maxWidth: 25)
+                .foregroundColor(.orange)
+            }
+            HStack {
+                createCalcDigit("4").frame(minWidth: 24, maxWidth: 25)
+                createCalcDigit("5").frame(minWidth: 24, maxWidth: 25)
+                createCalcDigit("6").frame(minWidth: 24, maxWidth: 25)
                 Button(action: {
                     self.operandTapped("*")
                 }) {
                     (Text("*"))
-                }
+                }.frame(minWidth: 24, maxWidth: 25)
+                .foregroundColor(.orange)
             }
             HStack {
-                Button(action: {
-                    self.operandTapped("/")
-                }) {
-                    (Text("/"))
-                }
+                createCalcDigit("7").frame(minWidth: 24, maxWidth: 25)
+                createCalcDigit("8").frame(minWidth: 24, maxWidth: 25)
+                createCalcDigit("9").frame(minWidth: 24, maxWidth: 25)
                 Button(action: {
                     self.operandTapped("-")
                 }) {
                     (Text("-"))
-                }
+                }.frame(minWidth: 24, maxWidth: 25)
+                .foregroundColor(.orange)
+            }
+            HStack {
+                createCalcDigit("0").frame(minWidth: 24, maxWidth: 25)
+                createCalcDigit(".").frame(minWidth: 24, maxWidth: 25)
+                Button(action: {
+                    self.operandTapped("/")
+                }) {
+                    (Text("/"))
+                }.frame(minWidth: 24, maxWidth: 25)
+                .foregroundColor(.orange)
                 Button(action: {
                     self.calculate()
                 }) {
                     (Text("="))
-                }
+                }.frame(minWidth: 24, maxWidth: 25)
+                .foregroundColor(.orange)
             }
         }
     }
