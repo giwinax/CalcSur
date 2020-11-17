@@ -47,14 +47,8 @@ struct ContentView: View {
             result = firstNumber * secondNumber
         }
         else if operand == "/" {
-            if (secondNumber == 0.0 || secondNumber == 0) {
-                result = 0.0
-            } else
-            {
-                result = firstNumber / secondNumber
-            }
-        }
-        calculatorText = String(format: "%.3f", result)
+            result = firstNumber / secondNumber
+            calculatorText = String(format: "%.3f", result)
     }
     var body: some View {
         VStack {
