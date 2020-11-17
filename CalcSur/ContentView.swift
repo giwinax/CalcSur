@@ -48,7 +48,8 @@ struct ContentView: View {
         }
         else if operand == "/" {
             result = firstNumber / secondNumber
-            calculatorText = String(format: "%.3f", result)
+        }
+        calculatorText = String(format: "%.3f", result)
     }
     var body: some View {
         VStack {
